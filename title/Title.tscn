@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[node name="Title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="background" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.85263 )
+
+[node name="MeshInstance" type="MeshInstance" parent="background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.56397 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Label" type="Label" parent="."]
+margin_left = 157.0
+margin_top = 121.0
+margin_right = 232.0
+margin_bottom = 135.0
+text = "hello world!"

@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="AdvJam2022"
+run/main_scene="res://splash/Splash.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://singletons/Game.tscn"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/ridiculous_coding/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0.164706, 0.533333, 0.886275, 1 )
+environment/default_environment="res://default_env.tres"
