@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gui/theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/fonts/regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://title/Title.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 2 )
 
 [node name="Title" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="background" type="Spatial" parent="."]
 
@@ -18,9 +25,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.85263 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.56397 )
 mesh = SubResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 157.0
-margin_top = 121.0
-margin_right = 232.0
-margin_bottom = 135.0
-text = "hello world!"
+[node name="Title" type="Label" parent="."]
+margin_left = 61.0
+margin_top = 77.0
+margin_right = 439.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 2 )
+text = "How did you die?"
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 111.0
+margin_top = 250.0
+margin_right = 489.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 2 )
+text = "credits"
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 800.0
+margin_top = 151.0
+margin_right = 858.0
+margin_bottom = 197.0
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 810.0
+margin_top = 235.0
+margin_right = 868.0
+margin_bottom = 281.0
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

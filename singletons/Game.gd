@@ -18,7 +18,7 @@ func scene_transition(scene_path: String, duration: float = 3.0):
 	$Transition.show()
 	t.tween_property($Transition/Fade, "modulate", end, duration/2.0)
 	t.tween_callback(self, "change_scene", [scene_path])
-	t.tween_property($Transition/Fade, "modulate", start, duration/2.0).set_delay(0.1)
+	t.tween_property($Transition/Fade, "modulate", start, duration/2.0).set_delay(0.2)
 	t.tween_callback($Transition, "hide")
 	t.play()
 
