@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	Game.scene_transition("res://title/Title.tscn")
+	Game.scene_transition("res://title/Title.tscn", 3.0)
