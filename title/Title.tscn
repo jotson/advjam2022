@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://gui/fonts/regular.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,10 @@
 size = 48
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
 [node name="Title" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,41 +23,55 @@ script = ExtResource( 3 )
 [node name="background" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="background"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.85263 )
+transform = Transform( 0.947042, 0, 0.321109, -0.0604285, 0.982133, 0.178221, -0.315372, -0.188187, 0.930122, 1.07782, 0.790913, 1.85263 )
 
 [node name="MeshInstance" type="MeshInstance" parent="background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.56397 )
 mesh = SubResource( 1 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="background"]
+transform = Transform( 0.924173, 0.107585, 0.36651, -0.381974, 0.260298, 0.886759, 0, -0.959516, 0.281655, 0, 1.61756, 0 )
+shadow_enabled = true
+
 [node name="Title" type="Label" parent="."]
-margin_left = 61.0
-margin_top = 77.0
-margin_right = 439.0
-margin_bottom = 157.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 418.0
+margin_bottom = 120.0
 custom_fonts/font = SubResource( 2 )
 text = "How did you die?"
 
-[node name="Credits" type="Label" parent="."]
-margin_left = 111.0
-margin_top = 250.0
-margin_right = 489.0
-margin_bottom = 330.0
-custom_fonts/font = SubResource( 2 )
-text = "credits"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 200.0
+margin_right = 474.0
+margin_bottom = 447.0
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 800.0
-margin_top = 151.0
-margin_right = 858.0
-margin_bottom = 197.0
+[node name="Credits" type="Label" parent="VBoxContainer"]
+margin_right = 434.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 3 )
+text = "Made for Adventure Jam 2022
+by John Watson"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+margin_top = 115.0
+margin_right = 434.0
+margin_bottom = 157.0
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="."]
-margin_left = 810.0
-margin_top = 235.0
-margin_right = 868.0
-margin_bottom = 281.0
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 161.0
+margin_right = 434.0
+margin_bottom = 203.0
 text = "Quit"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="GameLink" type="LinkButton" parent="VBoxContainer"]
+margin_top = 207.0
+margin_right = 434.0
+margin_bottom = 247.0
+text = "https://jotson.itch.io/how-did-you-die"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameLink" to="." method="_on_GameLink_pressed"]

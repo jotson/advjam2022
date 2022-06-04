@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="Sun" type="DirectionalLight"]
+directional_shadow_max_distance = 20.0

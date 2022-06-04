@@ -1,6 +1,12 @@
 extends Node
 
 const CLEAR_COLOR = Color("#2a88e2")
+const TEXT_COLOR = Color("#ffffff")
+const HIGHLIGHT_COLOR = Color("#ffa700")
+const DARK_COLOR = Color("#333333")
+
+var CurrentCamera = null
+var Player = null
 
 
 func _ready():

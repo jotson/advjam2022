@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/Sun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/kiosk/Kiosk.gd" type="Script" id=4]
+[ext_resource path="res://game/Camera.tscn" type="PackedScene" id=5]
+
+[node name="Kiosk" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Camera" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50404, 0 )
+
+[node name="Sun" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.949064, 0.193416, 0.248732, -0.307845, 0.40097, 0.862818, 0.0671483, -0.89544, 0.440088, 4.78469, 12.11, 5.88169 )
+shadow_enabled = true
+shadow_color = Color( 0.101961, 0.117647, 0.14902, 1 )
+directional_shadow_max_distance = 100.0
+
+[node name="Floor" parent="." instance=ExtResource( 3 )]

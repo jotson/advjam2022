@@ -11,12 +11,18 @@ config_version=4
 [application]
 
 config/name="AdvJam2022"
-run/main_scene="res://splash/Splash.tscn"
+run/main_scene="res://game/kiosk/Kiosk.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Game="*res://singletons/Game.tscn"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
 
 [editor_plugins]
 
