@@ -21,8 +21,6 @@ script = ExtResource( 2 )
 
 [node name="Sun" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.949064, 0.193416, 0.248732, -0.307845, 0.40097, 0.862818, 0.0671483, -0.89544, 0.440088, 4.78469, 12.11, 5.88169 )
-shadow_enabled = true
-shadow_color = Color( 0.101961, 0.117647, 0.14902, 1 )
 directional_shadow_max_distance = 100.0
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]

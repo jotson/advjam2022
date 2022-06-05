@@ -11,5 +11,5 @@ dest_files=[ "res://.import/idle-kiosk.ogg-084945f43f9efb69591ab45bb522fdc0.oggs
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

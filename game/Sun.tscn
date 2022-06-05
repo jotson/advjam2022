@@ -1,4 +1,6 @@
 [gd_scene format=2]
 
 [node name="Sun" type="DirectionalLight"]
+shadow_enabled = true
+shadow_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 directional_shadow_max_distance = 20.0
