@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wait-your-turn.ogg-99b9dbb44a59c652009b3afcedd9b08d.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/wait-your-turn.ogg"
+dest_files=[ "res://.import/wait-your-turn.ogg-99b9dbb44a59c652009b3afcedd9b08d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

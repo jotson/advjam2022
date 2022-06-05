@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/no-judgement-2.ogg-fe799cb4af136253015c58d99d8ecb77.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/no-judgement-2.ogg"
+dest_files=[ "res://.import/no-judgement-2.ogg-fe799cb4af136253015c58d99d8ecb77.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

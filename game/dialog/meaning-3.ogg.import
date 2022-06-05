@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/meaning-3.ogg-77e6a68a97843d65531f1bb787104685.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/meaning-3.ogg"
+dest_files=[ "res://.import/meaning-3.ogg-77e6a68a97843d65531f1bb787104685.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

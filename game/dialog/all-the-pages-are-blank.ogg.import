@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/all-the-pages-are-blank.ogg-51e610b8d00c7046fc710ada8aa623fc.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/all-the-pages-are-blank.ogg"
+dest_files=[ "res://.import/all-the-pages-are-blank.ogg-51e610b8d00c7046fc710ada8aa623fc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

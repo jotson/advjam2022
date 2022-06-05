@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/idle-kiosk.ogg-084945f43f9efb69591ab45bb522fdc0.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/idle-kiosk.ogg"
+dest_files=[ "res://.import/idle-kiosk.ogg-084945f43f9efb69591ab45bb522fdc0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

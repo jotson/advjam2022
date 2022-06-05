@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you-are-good-enough.ogg-982e261757fa158889bbf18d1c744b8e.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/you-are-good-enough.ogg"
+dest_files=[ "res://.import/you-are-good-enough.ogg-982e261757fa158889bbf18d1c744b8e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

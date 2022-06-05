@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you-chose-joy.ogg-a9b0fc675f47bf06b443dec52d77e69f.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/you-chose-joy.ogg"
+dest_files=[ "res://.import/you-chose-joy.ogg-a9b0fc675f47bf06b443dec52d77e69f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

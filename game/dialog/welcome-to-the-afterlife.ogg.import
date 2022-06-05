@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/welcome-to-the-afterlife.ogg-e6d887bda1b901c59c96f403719d2aa1.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/welcome-to-the-afterlife.ogg"
+dest_files=[ "res://.import/welcome-to-the-afterlife.ogg-e6d887bda1b901c59c96f403719d2aa1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

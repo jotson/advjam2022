@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/not-ready.ogg-dd9afe5ca8f79804acc039b3fa3670e4.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/not-ready.ogg"
+dest_files=[ "res://.import/not-ready.ogg-dd9afe5ca8f79804acc039b3fa3670e4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

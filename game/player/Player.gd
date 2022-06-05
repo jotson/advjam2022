@@ -1,6 +1,7 @@
 extends KinematicBody
 
-var target_position: Vector3
+const HEIGHT = 1.5
+var target_position: Vector3 = Vector3.ZERO
 
 
 func _ready():
@@ -9,14 +10,18 @@ func _ready():
 
 func _physics_process(delta):
 	var linear_velocity: Vector3
-	linear_velocity = (target_position - translation)
-	linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
-	
+
+	if target_position == Vector3.ZERO:
+		linear_velocity = Vector3.ZERO
+	else:
+		linear_velocity = (target_position - translation)
+		linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
+		
 	if linear_velocity.length() > 0:
 		update_player_heading(linear_velocity)
 
-	var floating_offset = sin(OS.get_ticks_msec() / 150.0) * 0.5
-	$body.translation.y = 1.5 + floating_offset
+	var floating_offset = sin(OS.get_ticks_msec() / 300.0) * 0.2
+	$body.translation.y = HEIGHT + floating_offset
 		
 
 func update_player_heading(direction: Vector3):
@@ -33,5 +38,5 @@ func update_player_heading(direction: Vector3):
 
 
 func move_to(target: Vector3):
-	target.y = 1
+	target.y = HEIGHT
 	target_position = target
