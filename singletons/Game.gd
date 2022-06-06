@@ -9,31 +9,11 @@ var CurrentCamera: Camera = null
 var Player = null
 
 var State = {
-	"kiosk": {
+	"checkin": {
 		"visited": false,
 		"completed": false
 	},
 	"limbo": {
-		"visited": false,
-		"completed": false
-	},
-	"regret": {
-		"visited": false,
-		"completed": false
-	},
-	"area2": {
-		"visited": false,
-		"completed": false
-	},
-	"area3": {
-		"visited": false,
-		"completed": false
-	},
-	"area4": {
-		"visited": false,
-		"completed": false
-	},
-	"area5": {
 		"visited": false,
 		"completed": false
 	},

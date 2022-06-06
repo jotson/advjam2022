@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/step-through.ogg-8144853cb07608543de6375e48d9a86d.oggstr"
+
+[deps]
+
+source_file="res://game/dialog/step-through.ogg"
+dest_files=[ "res://.import/step-through.ogg-8144853cb07608543de6375e48d9a86d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/checkin/Checkin.gd" type="Script" id=2]
@@ -9,9 +9,51 @@
 [ext_resource path="res://game/Sun.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/checkin/kiosk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/ground/boulder.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/dialog/step-through.ogg" type="AudioStream" id=10]
+[ext_resource path="res://game/dialog/you-can-do-it.ogg" type="AudioStream" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 2, 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "welcome"
+length = 42.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("dialog")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0, 35.1 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "youcandoit"
+length = 7.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("dialog")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [node name="Checkin" type="Spatial"]
 script = ExtResource( 2 )
@@ -37,9 +79,9 @@ input_ray_pickable = false
 [node name="CollisionShape" type="CollisionShape" parent="Kiosk/KioskArea"]
 shape = SubResource( 1 )
 
-[node name="welcomeSound" type="AudioStreamPlayer3D" parent="Kiosk"]
+[node name="dialog" type="AudioStreamPlayer3D" parent="Kiosk"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-stream = ExtResource( 3 )
+stream = ExtResource( 11 )
 unit_size = 50.0
 bus = "Sfx"
 
@@ -50,6 +92,10 @@ unit_db = -12.0
 unit_size = 50.0
 autoplay = true
 bus = "Sfx"
+
+[node name="KioskAnim" type="AnimationPlayer" parent="Kiosk"]
+anims/welcome = SubResource( 2 )
+anims/youcandoit = SubResource( 3 )
 
 [node name="boulder" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.76545, 0, -0.643496, 0, 1, 0, 0.643496, 0, 0.76545, 8.52055, -0.499982, -7.00531 )
@@ -70,3 +116,4 @@ omni_range = 9.4475
 
 [connection signal="body_entered" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_entered"]
 [connection signal="body_exited" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_exited"]
+[connection signal="animation_finished" from="Kiosk/KioskAnim" to="." method="_on_KioskAnim_animation_finished"]

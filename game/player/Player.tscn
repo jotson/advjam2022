@@ -33,7 +33,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0
 mesh = SubResource( 3 )
 
 [node name="LightTop" type="OmniLight" parent="body"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.67948e-07, -2.84221 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.46697e-07, -2.35604 )
 layers = 2
 light_energy = 3.0
 shadow_enabled = true

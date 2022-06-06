@@ -1,8 +1,8 @@
 extends KinematicBody
 
 const HEIGHT = 1.5
-const MAX_SPEED = 5
-const ACCELERATION = 20
+const MAX_SPEED = 6
+const ACCELERATION = 60
 
 const Waypoint = preload("res://game/waypoint/Waypoint.tscn")
 
@@ -16,20 +16,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	get_player_input()
+	#click_to_move_controller(delta)
+	wasd_controller(delta)
 	
-	var direction = (target_position - translation).normalized()
-	var distance = (target_position - translation).length()
-	
-	if moving:
-		linear_velocity += direction * ACCELERATION * delta
-		if distance < 2:
-			moving = false
-	else:
-		linear_velocity *= 0.9
-
 	if linear_velocity.length() > MAX_SPEED:
-		linear_velocity = direction * MAX_SPEED
+		linear_velocity = linear_velocity.normalized() * MAX_SPEED
 
 	if linear_velocity.length() > 0:
 		linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
@@ -39,7 +30,28 @@ func _physics_process(delta):
 	$body.translation.y = HEIGHT + floating_offset
 	
 
-func get_player_input():
+func wasd_controller(delta: float):
+	var direction: Vector3
+	
+	if Input.is_action_pressed("up"):
+		direction += -Game.CurrentCamera.transform.basis.z
+	if Input.is_action_pressed("down"):
+		direction += Game.CurrentCamera.transform.basis.z
+	if Input.is_action_pressed("left"):
+		direction += -Game.CurrentCamera.transform.basis.x
+	if Input.is_action_pressed("right"):
+		direction += Game.CurrentCamera.transform.basis.x
+
+	direction.y = 0
+	direction = direction.normalized()
+	
+	if direction.length():
+		linear_velocity += direction * ACCELERATION * delta
+	else:
+		linear_velocity *= 0.9
+
+
+func click_to_move_controller(delta: float):
 	if Input.is_mouse_button_pressed(1):
 		var mouse_position = get_viewport().get_mouse_position()
 		var camera = Game.CurrentCamera
@@ -48,10 +60,16 @@ func get_player_input():
 		target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
 		target_position.y = HEIGHT
 		moving = true
-		
-		var w = Waypoint.instance()
-		w.translation = target_position
-		get_tree().current_scene.add_child(w)
+
+	var direction = (target_position - translation).normalized()
+	var distance = (target_position - translation).length()
+	
+	if moving:
+		linear_velocity += direction * ACCELERATION * delta
+		if distance < 2:
+			moving = false
+	else:
+		linear_velocity *= 0.9
 
 
 func update_player_heading(direction: Vector3):
