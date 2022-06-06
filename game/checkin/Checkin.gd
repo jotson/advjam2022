@@ -6,15 +6,16 @@ func _ready():
 	Game.State.checkin.visited = true
 
 
-func _on_KioskArea_body_entered(body):
+func _on_KioskArea_body_entered(_body):
 	$Kiosk/idleSound.stop()
 	if Game.State.checkin.completed:
 		$Kiosk/KioskAnim.play("youcandoit")
 	else:
 		$Kiosk/KioskAnim.play("welcome")
+		$Portal.appear()
 
 
-func _on_KioskArea_body_exited(body):
+func _on_KioskArea_body_exited(_body):
 	$Kiosk/idleSound.play()
 	$Kiosk/KioskAnim.stop()
 

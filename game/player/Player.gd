@@ -31,7 +31,7 @@ func _physics_process(delta):
 	
 
 func wasd_controller(delta: float):
-	var direction: Vector3
+	var direction: Vector3 = Vector3.ZERO
 	
 	if Input.is_action_pressed("up"):
 		direction += -Game.CurrentCamera.transform.basis.z

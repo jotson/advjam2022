@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://game/checkin/portal.glb" type="PackedScene" id=1]
+[ext_resource path="res://game/checkin/portal.gd" type="Script" id=2]
+[ext_resource path="res://game/checkin/generic-particle.material" type="Material" id=3]
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 2, 1, 0.3 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 0.5
+color_ramp = SubResource( 6 )
+
+[sub_resource type="SphereMesh" id=7]
+material = ExtResource( 3 )
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.73095, 2.40687, 1 )
+
+[node name="Portal" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48223, 0.706512 )
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 6.73673
+
+[node name="Particles" type="Particles" parent="." index="2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.381518, 0 )
+amount = 200
+lifetime = 10.0
+visibility_aabb = AABB( -4, -6.19309, -4.65638, 8, 12.3862, 9.31275 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="activationArea" type="Area" parent="." index="3"]
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="activationArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64939, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="activationArea" to="." method="_on_activationArea_body_entered"]
