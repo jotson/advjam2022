@@ -12,11 +12,9 @@ func _on_KioskArea_body_entered(_body):
 		$Kiosk/KioskAnim.play("youcandoit")
 	else:
 		$Kiosk/KioskAnim.play("welcome")
-		$Portal.appear()
 
 
 func _on_KioskArea_body_exited(_body):
-	$Kiosk/idleSound.play()
 	$Kiosk/KioskAnim.stop()
 
 

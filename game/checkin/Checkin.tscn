@@ -105,7 +105,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 stream = ExtResource( 4 )
 unit_db = -12.0
 unit_size = 50.0
-autoplay = true
 bus = "Sfx"
 
 [node name="KioskAnim" type="AnimationPlayer" parent="Kiosk"]

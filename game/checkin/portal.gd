@@ -2,6 +2,8 @@ extends Spatial
 
 func _ready():
 	translation.y = -10
+	$Particles.emitting = false
+	hide()
 
 
 func _on_activationArea_body_entered(_body):
@@ -10,6 +12,8 @@ func _on_activationArea_body_entered(_body):
 
 
 func appear():
+	show()
+	$Particles.emitting = true
 	var target = Vector3(translation.x, -0.5, translation.z)
 	var t = create_tween()
 	t.tween_property(self, "translation", target, 3.0)
