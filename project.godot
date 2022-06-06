@@ -66,8 +66,9 @@ right={
 
 [layer_names]
 
-3d_physics/layer_1="Player"
-3d_physics/layer_2="World"
+3d_physics/layer_1="World"
+3d_physics/layer_2="NPC"
+3d_physics/layer_24="Player"
 
 [physics]
 

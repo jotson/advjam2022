@@ -47,7 +47,7 @@ process_material = SubResource( 2 )
 draw_pass_1 = SubResource( 7 )
 
 [node name="activationArea" type="Area" parent="." index="3"]
-collision_layer = 2
+collision_mask = 8388608
 
 [node name="CollisionShape" type="CollisionShape" parent="activationArea" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64939, 0 )

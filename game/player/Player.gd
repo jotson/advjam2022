@@ -24,7 +24,7 @@ func _physics_process(delta):
 
 	if linear_velocity.length() > 0:
 		linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
-		update_player_heading(linear_velocity)
+		update_heading(linear_velocity)
 
 	var floating_offset = sin(OS.get_ticks_msec() / 200.0) * 0.25
 	$body.translation.y = HEIGHT + floating_offset
@@ -72,7 +72,7 @@ func click_to_move_controller(delta: float):
 		linear_velocity *= 0.9
 
 
-func update_player_heading(direction: Vector3):
+func update_heading(direction: Vector3):
 	var goal_basis = transform.basis
 	goal_basis.z = direction.normalized()
 	goal_basis.y = Vector3(0,1,0)

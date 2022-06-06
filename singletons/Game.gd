@@ -44,3 +44,21 @@ func change_scene(scene_path: String):
 	if err != OK:
 		pass
 	
+
+func get_random_position_near_player() -> Vector3:
+	var SIZE = 30
+	var x = randf() * SIZE - SIZE/2
+	var y = 1.5
+	var z = randf() * SIZE - SIZE/2
+	
+	return Game.Player.translation + Vector3(x,y,z)
+	
+
+func get_random_position() -> Vector3:
+	var SIZE = 100
+	var x = randf() * SIZE - SIZE/2
+	var y = 1.5
+	var z = randf() * SIZE - SIZE/2
+	
+	return Vector3(x,y,z)
+	

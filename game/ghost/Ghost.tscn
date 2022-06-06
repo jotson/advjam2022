@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/ghost/ghost.glb" type="PackedScene" id=1]
+[ext_resource path="res://game/ghost/Ghost.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[node name="Ghost" groups=["ghosts"] instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="Ghost" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4774, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4774, 0 )
+shape = SubResource( 1 )
+
+[node name="moveTimer" type="Timer" parent="." index="2"]
+one_shot = true
+autostart = true
+
+[node name="deathTimer" type="Timer" parent="." index="3"]
+
+[connection signal="timeout" from="moveTimer" to="." method="_on_moveTimer_timeout"]
+[connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
