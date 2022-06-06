@@ -1,6 +1,7 @@
 [gd_scene format=2]
 
 [node name="Sun" type="DirectionalLight"]
+transform = Transform( 0.880756, -0.366651, 0.299727, -0.0557725, 0.548196, 0.834488, -0.470275, -0.751697, 0.462377, 0, -0.0579491, 0 )
+light_energy = 0.5
 shadow_enabled = true
-shadow_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 directional_shadow_max_distance = 20.0

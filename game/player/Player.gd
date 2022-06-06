@@ -1,7 +1,12 @@
 extends KinematicBody
 
 const HEIGHT = 1.5
+const MAX_SPEED = 10
+const ACCELERATION = 20
+
 var target_position: Vector3 = Vector3.ZERO
+var linear_velocity: Vector3 = Vector3.ZERO
+var moving = false
 
 
 func _ready():
@@ -9,20 +14,38 @@ func _ready():
 
 
 func _physics_process(delta):
-	var linear_velocity: Vector3
+	get_player_input()
+	
+	var direction = (target_position - translation).normalized()
 
-	if target_position == Vector3.ZERO:
-		linear_velocity = Vector3.ZERO
+	if moving:
+		linear_velocity += direction * ACCELERATION * delta
 	else:
-		linear_velocity = (target_position - translation)
-		linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
-		
+		linear_velocity *= 0.9
+
+	if linear_velocity.length() > MAX_SPEED:
+		linear_velocity = direction * MAX_SPEED
+
 	if linear_velocity.length() > 0:
+		linear_velocity = move_and_slide(linear_velocity, Vector3.UP)
 		update_player_heading(linear_velocity)
 
-	var floating_offset = sin(OS.get_ticks_msec() / 300.0) * 0.2
+	var floating_offset = sin(OS.get_ticks_msec() / 200.0) * 0.25
 	$body.translation.y = HEIGHT + floating_offset
-		
+	
+
+func get_player_input():
+	if Input.is_mouse_button_pressed(1):
+		var mouse_position = get_viewport().get_mouse_position()
+		var camera = Game.CurrentCamera
+		var plane = Plane(Vector3(0,1,0), 0)
+		var from = camera.project_ray_origin(mouse_position)
+		target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
+		target_position.y = HEIGHT
+		moving = true
+	else:
+		moving = false
+
 
 func update_player_heading(direction: Vector3):
 	var goal_basis = transform.basis
@@ -35,8 +58,3 @@ func update_player_heading(direction: Vector3):
 	var q2 = Quat(goal_basis)
 	var q3 = q1.slerp(q2, 0.1)
 	transform.basis = Basis(q3)
-
-
-func move_to(target: Vector3):
-	target.y = HEIGHT
-	target_position = target

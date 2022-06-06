@@ -5,7 +5,7 @@ const TEXT_COLOR = Color("#ffffff")
 const HIGHLIGHT_COLOR = Color("#ffa700")
 const DARK_COLOR = Color("#333333")
 
-var CurrentCamera = null
+var CurrentCamera: Camera = null
 var Player = null
 
 var State = {

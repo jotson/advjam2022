@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/checkin/Checkin.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://game/dialog/idle-kiosk.ogg" type="AudioStream" id=4]
 [ext_resource path="res://game/Camera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/Sun.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/checkin/kiosk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/ground/boulder.tscn" type="PackedScene" id=9]
 
@@ -19,11 +20,14 @@ script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
+[node name="Sun" parent="." instance=ExtResource( 7 )]
+visible = false
+
 [node name="Floor" parent="." instance=ExtResource( 6 )]
 collision_layer = 2
 
 [node name="Kiosk" parent="." instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -9 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -11 )
 
 [node name="KioskArea" type="Area" parent="Kiosk"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11959e-07, 2, -4 )
@@ -48,10 +52,21 @@ autoplay = true
 bus = "Sfx"
 
 [node name="boulder" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.76545, 0, -0.643496, 0, 1, 0, 0.643496, 0, 0.76545, 8.21061, -0.499982, -8.4725 )
+transform = Transform( 0.76545, 0, -0.643496, 0, 1, 0, 0.643496, 0, 0.76545, 8.52055, -0.499982, -7.00531 )
 
 [node name="boulder2" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.1059, 0, -0.994377, 0, 1, 0, 0.994377, 0, -0.1059, -9.97421, -0.499982, -8.4725 )
+transform = Transform( 0.0883029, 0, -0.996094, 0, 1, 0, 0.996094, 0, 0.0883029, -7.91725, -0.499982, -6.9206 )
+
+[node name="boulder3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.884695, 0, -0.46617, 0, 1, 0, 0.46617, 0, -0.884695, 0.509854, -0.499982, -23.9091 )
+
+[node name="SpotLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92047, -11.4602 )
+visible = false
+light_energy = 2.789
+shadow_enabled = true
+shadow_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+omni_range = 9.4475
 
 [connection signal="body_entered" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_entered"]
 [connection signal="body_exited" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_exited"]
