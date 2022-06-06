@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/small-rocks.glb-ffbfc6feab9bcbfe37a8abd3008be060.scn"
+path="res://.import/waypoint.glb-669d2dfdd14630b4640113077712e245.scn"
 
 [deps]
 
-source_file="res://game/ground/small-rocks.glb"
-dest_files=[ "res://.import/small-rocks.glb-ffbfc6feab9bcbfe37a8abd3008be060.scn" ]
+source_file="res://game/waypoint/waypoint.glb"
+dest_files=[ "res://.import/waypoint.glb-669d2dfdd14630b4640113077712e245.scn" ]
 
 [params]
 
@@ -18,7 +18,7 @@ nodes/custom_script=""
 nodes/storage=0
 nodes/use_legacy_names=false
 materials/location=1
-materials/storage=0
+materials/storage=1
 materials/keep_on_reimport=true
 meshes/octahedral_compression=true
 meshes/compress=4286

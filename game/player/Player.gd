@@ -1,8 +1,10 @@
 extends KinematicBody
 
 const HEIGHT = 1.5
-const MAX_SPEED = 10
+const MAX_SPEED = 5
 const ACCELERATION = 20
+
+const Waypoint = preload("res://game/waypoint/Waypoint.tscn")
 
 var target_position: Vector3 = Vector3.ZERO
 var linear_velocity: Vector3 = Vector3.ZERO
@@ -17,9 +19,12 @@ func _physics_process(delta):
 	get_player_input()
 	
 	var direction = (target_position - translation).normalized()
-
+	var distance = (target_position - translation).length()
+	
 	if moving:
 		linear_velocity += direction * ACCELERATION * delta
+		if distance < 2:
+			moving = false
 	else:
 		linear_velocity *= 0.9
 
@@ -43,8 +48,10 @@ func get_player_input():
 		target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
 		target_position.y = HEIGHT
 		moving = true
-	else:
-		moving = false
+		
+		var w = Waypoint.instance()
+		w.translation = target_position
+		get_tree().current_scene.add_child(w)
 
 
 func update_player_heading(direction: Vector3):

@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 
 [node name="Transition" type="CanvasLayer" parent="."]
 layer = 100
+visible = false
 
 [node name="Fade" type="ColorRect" parent="Transition"]
 anchor_right = 1.0
