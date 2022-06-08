@@ -6,7 +6,7 @@ const HIGHLIGHT_COLOR = Color("#ffa700")
 const DARK_COLOR = Color("#333333")
 
 var CurrentCamera: Camera = null
-var Player = null
+var Player = null setget set_player, get_player
 
 var State = {
 	"checkin": {
@@ -46,6 +46,9 @@ func change_scene(scene_path: String):
 	
 
 func get_random_position_near_player() -> Vector3:
+	if Game.Player == null:
+		return get_random_position()
+		
 	var SIZE = 30
 	var x = randf() * SIZE - SIZE/2
 	var y = 1.5
@@ -62,3 +65,12 @@ func get_random_position() -> Vector3:
 	
 	return Vector3(x,y,z)
 	
+
+func set_player(value):
+	Player = value
+
+
+func get_player():
+	if not is_instance_valid(Player):
+		Player = null
+	return Player

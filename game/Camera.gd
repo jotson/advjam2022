@@ -5,7 +5,7 @@ func _ready():
 
 
 func _process(_delta):
-	if Game.Player == null or not is_instance_valid(Game.Player):
+	if Game.Player == null:
 		return
 		
 	var player_offset = Vector3(-2, 14, 4)
