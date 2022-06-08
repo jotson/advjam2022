@@ -19,6 +19,8 @@ func _ready():
 	var MIN_LIFE = 5.0
 	$deathTimer.wait_time = randf() * (LIFETIME - MIN_LIFE) + MIN_LIFE
 	$deathTimer.start()
+	
+	#$fadeinSound.play()
 
 	translation.y = -10
 	var end = Vector3(translation.x, 1.5, translation.z)
@@ -67,6 +69,8 @@ func _on_moveTimer_timeout():
 
 func _on_deathTimer_timeout():
 	set_physics_process(false)
+	
+	#$fadeoutSound.play()
 	
 	var t = create_tween()
 	var end = Vector3(translation.x, 20, translation.z)

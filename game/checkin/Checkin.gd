@@ -21,3 +21,7 @@ func _on_KioskArea_body_exited(_body):
 func _on_KioskAnim_animation_finished(anim_name):
 	if anim_name == "welcome":
 		Game.State.checkin.completed = true
+
+
+func goto_next_scene():
+	Game.scene_transition("res://game/limbo/Limbo.tscn")

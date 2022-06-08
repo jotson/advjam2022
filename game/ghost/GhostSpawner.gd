@@ -9,8 +9,9 @@ func _on_spawnTimer_timeout():
 	if ghost_count >= MAX_GHOSTS:
 		return
 	
-	var to_spawn = randi() % 3
-	for _i in range(to_spawn):
-		var g = Ghost.instance()
-		g.translation = Game.get_random_position_near_player()
-		get_tree().current_scene.add_child(g)
+	var g = Ghost.instance()
+	g.translation = Game.get_random_position_near_player()
+	get_tree().current_scene.add_child(g)
+
+	$spawnTimer.wait_time = randf() * 2.5 + 0.5
+	$spawnTimer.start()

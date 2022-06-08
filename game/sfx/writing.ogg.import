@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/writing.ogg-9c940c357ea1be064d99bf2e81b7e497.oggstr"
+
+[deps]
+
+source_file="res://game/sfx/writing.ogg"
+dest_files=[ "res://.import/writing.ogg-9c940c357ea1be064d99bf2e81b7e497.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

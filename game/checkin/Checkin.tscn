@@ -39,17 +39,17 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 35.1 )
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("../Portal")
+tracks/1/path = NodePath("..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 34 ),
+"times": PoolRealArray( 36.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "appear"
+"method": "goto_next_scene"
 } ]
 }
 
@@ -99,7 +99,7 @@ shape = SubResource( 1 )
 
 [node name="dialog" type="AudioStreamPlayer3D" parent="Kiosk"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 unit_size = 50.0
 bus = "Sfx"
 

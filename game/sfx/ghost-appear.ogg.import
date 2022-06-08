@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ghost-appear.ogg-e16d52ef867f1f283f5eea299017f79f.oggstr"
+
+[deps]
+
+source_file="res://game/sfx/ghost-appear.ogg"
+dest_files=[ "res://.import/ghost-appear.ogg-e16d52ef867f1f283f5eea299017f79f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
