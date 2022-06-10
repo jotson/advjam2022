@@ -27,20 +27,21 @@ func _physics_process(delta):
 		update_heading(linear_velocity)
 
 	var floating_offset = sin(OS.get_ticks_msec() / 200.0) * 0.25
-	$body.translation.y = HEIGHT + floating_offset
+	$spirit.translation.y = HEIGHT + floating_offset
 	
 
 func wasd_controller(delta: float):
 	var direction: Vector3 = Vector3.ZERO
 	
-	if Input.is_action_pressed("up"):
-		direction += -Game.CurrentCamera.transform.basis.z
-	if Input.is_action_pressed("down"):
-		direction += Game.CurrentCamera.transform.basis.z
-	if Input.is_action_pressed("left"):
-		direction += -Game.CurrentCamera.transform.basis.x
-	if Input.is_action_pressed("right"):
-		direction += Game.CurrentCamera.transform.basis.x
+	if Game.player_control:
+		if Input.is_action_pressed("up"):
+			direction += -Game.CurrentCamera.transform.basis.z
+		if Input.is_action_pressed("down"):
+			direction += Game.CurrentCamera.transform.basis.z
+		if Input.is_action_pressed("left"):
+			direction += -Game.CurrentCamera.transform.basis.x
+		if Input.is_action_pressed("right"):
+			direction += Game.CurrentCamera.transform.basis.x
 
 	direction.y = 0
 	direction = direction.normalized()
@@ -52,14 +53,15 @@ func wasd_controller(delta: float):
 
 
 func click_to_move_controller(delta: float):
-	if Input.is_mouse_button_pressed(1):
-		var mouse_position = get_viewport().get_mouse_position()
-		var camera = Game.CurrentCamera
-		var plane = Plane(Vector3(0,1,0), 0)
-		var from = camera.project_ray_origin(mouse_position)
-		target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
-		target_position.y = HEIGHT
-		moving = true
+	if Game.player_control:
+		if Input.is_mouse_button_pressed(1):
+			var mouse_position = get_viewport().get_mouse_position()
+			var camera = Game.CurrentCamera
+			var plane = Plane(Vector3(0,1,0), 0)
+			var from = camera.project_ray_origin(mouse_position)
+			target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
+			target_position.y = HEIGHT
+			moving = true
 
 	var direction = (target_position - translation).normalized()
 	var distance = (target_position - translation).length()

@@ -7,6 +7,8 @@ const DARK_COLOR = Color("#333333")
 
 var CurrentCamera: Camera = null
 var Player = null setget set_player, get_player
+var player_control = true
+
 
 var State = {
 	"checkin": {
@@ -15,7 +17,7 @@ var State = {
 	},
 	"limbo": {
 		"visited": false,
-		"completed": false
+		"ready": false
 	},
 }
 
