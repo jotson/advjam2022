@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/someone.glb" type="PackedScene" id=1]
+[ext_resource path="res://game/someone.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+void vertex() {
+	vec3 v = VERTEX;
+	
+	v.y += sin(v.x * 3.0 + v.z * 3.0 + TIME * 3.0) * 0.4;
+	
+	VERTEX = v;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="someone" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="cape" parent="." index="0"]
+material/0 = SubResource( 2 )

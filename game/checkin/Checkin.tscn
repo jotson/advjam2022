@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/checkin/Checkin.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://game/dialog/step-through.ogg" type="AudioStream" id=10]
 [ext_resource path="res://game/dialog/you-can-do-it.ogg" type="AudioStream" id=11]
 [ext_resource path="res://game/checkin/portal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/someone.tscn" type="PackedScene" id=13]
 [ext_resource path="res://game/ghost/GhostSpawner.tscn" type="PackedScene" id=14]
 
 [sub_resource type="BoxShape" id=1]
@@ -133,6 +134,9 @@ omni_range = 9.4475
 
 [node name="Portal" parent="." instance=ExtResource( 12 )]
 transform = Transform( 0.833664, 0, 0.552272, 0, 1, 0, -0.552272, 0, 0.833664, -8.84746, -0.703161, -19.3667 )
+
+[node name="someone" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.9436 )
 
 [connection signal="body_entered" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_entered"]
 [connection signal="body_exited" from="Kiosk/KioskArea" to="." method="_on_KioskArea_body_exited"]
