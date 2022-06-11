@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/reincarnation/chessboard.glb" type="PackedScene" id=1]
+[ext_resource path="res://game/reincarnation/chessboard.gd" type="Script" id=2]
+
+[node name="chessboard" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="cube005" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 3.33198, 1.575 )
+
+[node name="cube018" parent="." index="18"]
+visible = false
+
+[node name="cube031" parent="." index="31"]
+visible = false
+
+[node name="cube036" parent="." index="36"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, 2.70971, -0.224999 )
+
+[node name="cube042" parent="." index="42"]
+visible = false
+
+[node name="cube048" parent="." index="48"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.575, 2.88305, -0.675 )
+
+[node name="cube059" parent="." index="59"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 3.24527, -1.575 )

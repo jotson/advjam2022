@@ -10,11 +10,11 @@ func _ready():
 
 
 func _on_triggerArea_body_entered(body):
-	if Game.State.judgement.visits <= 0:
+	if Game.State.reincarnation.visits <= 0:
 		if not $dialog1.playing:
 			$dialog1.play()
 		t = create_tween()
-		t.tween_callback(self, "achievement_get").set_delay(21)
+		t.tween_callback(self, "achievement_get").set_delay(11)
 	else:
 		if not $dialog2.playing:
 			$dialog2.play()
@@ -30,5 +30,5 @@ func _on_triggerArea_body_exited(body):
 
 
 func achievement_get():
-	Game.State.judgement.ready = true
-	Game.State.judgement.visits += 1
+	Game.State.reincarnation.ready = true
+	Game.State.reincarnation.visits += 1
