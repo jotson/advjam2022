@@ -4,7 +4,8 @@ extends Spatial
 func _ready():
 	Game.Player = $Player
 	Game.CurrentCamera = $Camera
-	Game.State.limbo.visited = true
+	Game.State.limbo.visits += 1
+	Game.player_control = true
 
 
 func _on_doorArea_body_entered(_body):

@@ -24,4 +24,4 @@ func _on_KioskAnim_animation_finished(anim_name):
 
 
 func goto_next_scene():
-	Game.scene_transition("res://game/limbo/Limbo.tscn")
+	Game.scene_transition("res://game/limbo/Limbo.tscn", "Limbo")

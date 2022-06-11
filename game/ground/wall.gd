@@ -1,9 +1,12 @@
 extends Spatial
 
 export var target_scene: String
+export var title: String
 
 
 func _ready():
+	Game.player_control = true
+
 	for w in get_children():
 		var start = w.translation
 		var end = start + Vector3(0, 0.5, 0)
@@ -14,5 +17,5 @@ func _ready():
 
 
 func _on_Area_body_entered(_body):
-	Game.Player.queue_free()
-	Game.scene_transition(target_scene)
+	Game.player_control = false
+	Game.scene_transition(target_scene, title)

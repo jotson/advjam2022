@@ -147,6 +147,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5441, 0, 1.92359 )
 
 [node name="wall2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.641958, 0, -0.76674, 0, 1, 0, 0.76674, 0, 0.641958, 30.966, 0, 37.3683 )
+target_scene = "res://game/judgement/Judgement.tscn"
+title = "Judgement"
 
 [node name="wall3" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.197726, 0, -0.980257, 0, 1, 0, 0.980257, 0, -0.197726, -13.1655, 0, 42.6951 )

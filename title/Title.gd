@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_PlayButton_pressed():
-	Game.scene_transition("res://game/kiosk/Kiosk.tscn")
+	Game.scene_transition("res://game/checkin/Checkin.tscn")
 
 
 func _on_QuitButton_pressed():

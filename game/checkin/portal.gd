@@ -8,7 +8,7 @@ func _ready():
 
 func _on_activationArea_body_entered(_body):
 	Game.Player.queue_free()
-	Game.scene_transition("res://game/limbo/Limbo.tscn")
+	Game.scene_transition("res://game/limbo/Limbo.tscn", "Limbo")
 
 
 func appear():

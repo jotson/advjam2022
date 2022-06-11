@@ -62,7 +62,9 @@ func click_to_move_controller(delta: float):
 			target_position = plane.intersects_ray(from, camera.project_ray_normal(mouse_position))
 			target_position.y = HEIGHT
 			moving = true
-
+	else:
+		moving = false
+		
 	var direction = (target_position - translation).normalized()
 	var distance = (target_position - translation).length()
 	
@@ -81,7 +83,18 @@ func update_heading(direction: Vector3):
 	goal_basis.x = (goal_basis.z.cross(-goal_basis.y)).normalized()
 	goal_basis = goal_basis.orthonormalized()
 	
+	transform.basis = transform.basis.orthonormalized()
 	var q1 = Quat(transform.basis)
 	var q2 = Quat(goal_basis)
 	var q3 = q1.slerp(q2, 0.1)
 	transform.basis = Basis(q3)
+
+
+func shrink():
+	var t = create_tween()
+	t.tween_property($spirit, "scale", Vector3(0,0,0), 1.0)
+	
+
+func grow():
+	var t = create_tween()
+	t.tween_property($spirit, "scale", Vector3(1,1,1), 1.0)
