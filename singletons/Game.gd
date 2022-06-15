@@ -9,6 +9,8 @@ var CurrentCamera: Camera = null
 var Player = null setget set_player, get_player
 var player_control = true
 
+const Orb = preload("res://game/orb.tscn")
+
 
 var State = {
 	"checkin": {
@@ -17,7 +19,7 @@ var State = {
 	},
 	"limbo": {
 		"visits": 0,
-		"ready": false
+		"completed": false
 	},
 	"judgement": {
 		"visits": 0,
@@ -97,3 +99,11 @@ func get_player():
 	if not is_instance_valid(Player):
 		Player = null
 	return Player
+
+func give_orb():
+	if get_player() == null:
+		return
+		
+	var o = Orb.instance()
+	Player.add_child(o)
+	

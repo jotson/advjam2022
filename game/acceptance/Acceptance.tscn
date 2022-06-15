@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://game/ground/wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/ground/path.glb" type="PackedScene" id=2]
+[ext_resource path="res://game/dialog/you-are-good-enough.ogg" type="AudioStream" id=3]
+[ext_resource path="res://game/acceptance/hands.glb" type="PackedScene" id=4]
+[ext_resource path="res://game/acceptance/Acceptance.gd" type="Script" id=6]
+[ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/Camera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/Sun.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/someone.tscn" type="PackedScene" id=11]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 6.46121, 7.16887, 4.45438 )
+
+[node name="Acceptance" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="Floor" parent="." instance=ExtResource( 7 )]
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.0554206, 0, 0.998463, 0, 1, 0, -0.998463, 0, -0.0554206, -35.2466, 0, 1.29525 )
+
+[node name="Camera" parent="." instance=ExtResource( 8 )]
+
+[node name="Sun" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.880756, -0.366651, 0.299727, -0.0557725, 0.548196, 0.834488, -0.470275, -0.751697, 0.462378, 0, -0.0579491, 0 )
+
+[node name="someone" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.406066, 0, -0.913843, 0, 1, 0, 0.913843, 0, 0.406066, 6.58544, 0, -3.51693 )
+
+[node name="dialog1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 5.45849, 4.00832, -6.53276 )
+stream = ExtResource( 3 )
+unit_size = 50.0
+bus = "Sfx"
+
+[node name="triggerArea" type="Area" parent="."]
+transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, 1.414, 0, -6.00558 )
+collision_mask = 8388608
+
+[node name="CollisionShape" type="CollisionShape" parent="triggerArea"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="wall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.979, 0, 0.526759 )
+target_scene = "res://game/limbo/Limbo.tscn"
+title = "Limbo"
+
+[node name="path" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.143458, 0, 0.989656, 0, 1, 0, -0.989656, 0, 0.143458, -23.3335, 0, -0.363473 )
+
+[node name="path10" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.143458, 0, 0.989656, 0, 1, 0, -0.989656, 0, 0.143458, -34.5368, 0, 1.19904 )
+
+[node name="path2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0646195, 0, 0.99791, 0, 1, 0, -0.99791, 0, -0.0646195, -18.897, 0, 0.279636 )
+
+[node name="path3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0646195, 0, 0.99791, 0, 1, 0, -0.99791, 0, -0.0646195, -13.1601, 0, -0.0918547 )
+
+[node name="path4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.163825, 0, 0.986489, 0, 1, 0, -0.986489, 0, -0.163825, -8.28117, 0, 1.62669 )
+
+[node name="path7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.974413, 0, -0.224764, 0, 1, 0, 0.224764, 0, 0.974413, -4.27202, 0, -2.11153 )
+
+[node name="path9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.780179, 0, 0.625556, 0, 1, 0, -0.625556, 0, 0.780179, 0.600676, 0, -4.1005 )
+
+[node name="hands" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30092, 1.31769, -10.6428 )
+
+[connection signal="body_entered" from="triggerArea" to="." method="_on_triggerArea_body_entered"]
+[connection signal="body_exited" from="triggerArea" to="." method="_on_triggerArea_body_exited"]

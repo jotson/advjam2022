@@ -12,7 +12,11 @@ var moving = false
 
 
 func _ready():
-	pass
+	# Get orbs and spawn them and do a thing
+	Game.Player = self
+	for key in Game.State.keys():
+		if Game.State[key].has("ready") and Game.State[key]["ready"] == true:
+			Game.give_orb()
 
 
 func _physics_process(delta):

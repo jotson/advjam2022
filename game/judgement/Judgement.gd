@@ -4,7 +4,6 @@ var t: SceneTreeTween
 
 
 func _ready():
-	Game.Player = $Player
 	Game.CurrentCamera = $Camera
 	Game.player_control = true
 
@@ -30,5 +29,6 @@ func _on_triggerArea_body_exited(body):
 
 
 func achievement_get():
+	Game.give_orb()
 	Game.State.judgement.ready = true
 	Game.State.judgement.visits += 1

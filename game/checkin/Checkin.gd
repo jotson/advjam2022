@@ -2,7 +2,6 @@ extends Spatial
 
 func _ready():
 	Game.CurrentCamera = $Camera
-	Game.Player = $Player
 	Game.State.checkin.visited = true
 
 

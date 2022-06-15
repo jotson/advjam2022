@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/orb.glb" type="PackedScene" id=1]
+[ext_resource path="res://game/orb.gd" type="Script" id=2]
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.101961 )
+
+[node name="orb" groups=["orbs"] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+transform = Transform( 0.456861, 0, 0, 0, 0.456861, 0, 0, 0, 0.456861, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )

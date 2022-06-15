@@ -2,7 +2,6 @@ extends Spatial
 
 
 func _ready():
-	Game.Player = $Player
 	Game.CurrentCamera = $Camera
 	Game.State.limbo.visits += 1
 	Game.player_control = true

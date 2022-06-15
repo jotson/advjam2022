@@ -4,7 +4,6 @@ var t: SceneTreeTween
 
 
 func _ready():
-	Game.Player = $Player
 	Game.CurrentCamera = $Camera
 	Game.player_control = true
 
@@ -20,7 +19,6 @@ func _on_triggerArea_body_entered(body):
 			$dialog2.play()
 
 
-
 func _on_triggerArea_body_exited(body):
 	if t:
 		t.stop()
@@ -30,5 +28,6 @@ func _on_triggerArea_body_exited(body):
 
 
 func achievement_get():
+	Game.give_orb()
 	Game.State.reincarnation.ready = true
 	Game.State.reincarnation.visits += 1
