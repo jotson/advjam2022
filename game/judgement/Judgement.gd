@@ -8,11 +8,12 @@ func _ready():
 	Game.player_control = true
 
 
-func _on_triggerArea_body_entered(body):
+func _on_triggerArea_body_entered(_body):
 	if Game.State.judgement.visits <= 0:
 		if not $dialog1.playing:
 			$dialog1.play()
 		t = create_tween()
+		# warning-ignore:return_value_discarded
 		t.tween_callback(self, "achievement_get").set_delay(21)
 	else:
 		if not $dialog2.playing:
@@ -20,7 +21,7 @@ func _on_triggerArea_body_entered(body):
 
 
 
-func _on_triggerArea_body_exited(body):
+func _on_triggerArea_body_exited(_body):
 	if t:
 		t.stop()
 		t = null

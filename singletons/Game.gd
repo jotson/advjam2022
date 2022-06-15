@@ -37,6 +37,10 @@ var State = {
 		"visits": 0,
 		"ready": false
 	},
+	"meaning": {
+		"visits": 0,
+		"ready": false
+	},
 }
 
 func _ready():

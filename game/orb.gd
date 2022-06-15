@@ -8,7 +8,7 @@ func _ready():
 	index = get_tree().get_nodes_in_group("orbs").size()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Orbit or follow the player
 	var new_offset = Game.Player.global_transform.basis.z * (index + 1.0)
 	offset = lerp(offset, new_offset, 0.1 / (index * 0.5))

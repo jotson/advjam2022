@@ -8,7 +8,7 @@ func _ready():
 
 
 func _on_doorArea_body_entered(_body):
-	if Game.State.limbo.ready:
+	if Game.State.limbo.completed:
 		if not $dialogReady.playing:
 			Game.player_control = false
 			$dialogReady.play()
