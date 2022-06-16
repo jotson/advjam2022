@@ -7,9 +7,15 @@ func _ready():
 	Game.CurrentCamera = $Camera
 	Game.player_control = true
 	
+	$ClickBeacon.hide()
+	
 	if Game.State.meaning.ready:
 		$book_pedastal/Book.hide()
 
+
+func show_click_beacon():
+	$ClickBeacon.show()
+	
 
 func _on_triggerArea_body_entered(_body):
 	if Game.State.meaning.visits <= 0:
@@ -21,6 +27,7 @@ func _on_triggerArea_body_entered(_body):
 
 
 func _on_book_pedastal_clicked():
+	$ClickBeacon.hide()
 	$AnimationPlayer.play("meaning2")
 
 
