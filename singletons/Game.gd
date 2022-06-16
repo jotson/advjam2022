@@ -35,7 +35,8 @@ var State = {
 	},
 	"loss": {
 		"visits": 0,
-		"ready": false
+		"ready": false,
+		"candles": 0
 	},
 	"meaning": {
 		"visits": 0,

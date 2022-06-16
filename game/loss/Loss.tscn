@@ -1,0 +1,138 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://game/loss/candles.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/Sun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/dialog/were-they-special.ogg" type="AudioStream" id=3]
+[ext_resource path="res://game/loss/Loss.gd" type="Script" id=4]
+[ext_resource path="res://game/ground/path.glb" type="PackedScene" id=5]
+[ext_resource path="res://game/someone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/Camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/ClickBeacon.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/dialog/light-a-candle.ogg" type="AudioStream" id=11]
+[ext_resource path="res://game/ground/arch.tscn" type="PackedScene" id=13]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 6.46121, 7.16887, 4.45438 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "loss1"
+length = 15.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("dialog")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_click_beacon"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "loss2"
+length = 13.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("dialog")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="Loss" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Floor" parent="." instance=ExtResource( 9 )]
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9 )
+
+[node name="Camera" parent="." instance=ExtResource( 7 )]
+
+[node name="Sun" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.880756, -0.366651, 0.299727, -0.0557725, 0.548196, 0.834488, -0.470275, -0.751697, 0.462378, 0, -0.0579491, 0 )
+
+[node name="someone" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.406066, 0, -0.913843, 0, 1, 0, 0.913843, 0, 0.406066, 6.58544, 0, -3.51693 )
+
+[node name="dialog" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 5.45849, 4.00832, -6.53276 )
+stream = ExtResource( 3 )
+unit_size = 50.0
+bus = "Sfx"
+
+[node name="triggerArea" type="Area" parent="."]
+transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, 2.20685, 0, -3.71779 )
+collision_mask = 8388608
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="triggerArea"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="path2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.998901, 0, -0.0468625, 0, 1, 0, 0.0468625, 0, -0.998901, 1.96784, 0, 8.14788 )
+
+[node name="path3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.983112, 0, -0.183008, 0, 1, 0, 0.183008, 0, -0.983112, -0.0471544, 0, 3.79476 )
+
+[node name="path4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.745638, 0, 0.66635, 0, 1, 0, -0.66635, 0, -0.745638, -5.67289, 0, 5.47957 )
+
+[node name="path7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.974413, 0, -0.224764, 0, 1, 0, 0.224764, 0, 0.974413, -4.27202, 0, -2.11153 )
+
+[node name="path9" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.780179, 0, 0.625556, 0, 1, 0, -0.625556, 0, 0.780179, 0.600676, 0, -4.1005 )
+
+[node name="path10" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.91227, 0, 0.409589, 0, 1, 0, -0.409589, 0, 0.91227, -3.16554, 0, -8.15544 )
+
+[node name="path11" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.753919, 0, 0.656967, 0, 1, 0, -0.656967, 0, 0.753919, -4.96617, 0, -12.6553 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/loss1 = SubResource( 2 )
+anims/loss2 = SubResource( 3 )
+
+[node name="arch" parent="." instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 16 )
+target_scene = "res://game/limbo/Limbo.tscn"
+title = "Limbo"
+
+[node name="ClickBeacon" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, -7.49451, 1.30829, -15.8649 )
+
+[node name="candles" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.892342, 0, 0.45136, 0, 1, 0, -0.45136, 0, -0.892342, -7.4209, 0, -15.8293 )
+
+[connection signal="body_entered" from="triggerArea" to="." method="_on_triggerArea_body_entered"]
+[connection signal="body_exited" from="triggerArea" to="." method="_on_triggerArea_body_exited"]
+[connection signal="clicked" from="candles" to="." method="_on_candles_clicked"]
