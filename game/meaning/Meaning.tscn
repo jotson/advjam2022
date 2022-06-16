@@ -109,6 +109,7 @@ bus = "Sfx"
 [node name="triggerArea" type="Area" parent="."]
 transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, 1.414, 0, -6.00558 )
 collision_mask = 8388608
+input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="triggerArea"]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )

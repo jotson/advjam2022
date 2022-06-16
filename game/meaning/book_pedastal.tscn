@@ -9,12 +9,6 @@ extents = Vector3( 1.73303, 1.80368, 1.26031 )
 [node name="book_pedastal" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Pedastal" parent="." index="0"]
-material/0 = null
-
-[node name="Book" parent="." index="1"]
-material/0 = null
-
 [node name="StaticBody" type="StaticBody" parent="." index="2"]
 collision_mask = 8388608
 
