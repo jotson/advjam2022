@@ -12,6 +12,9 @@ albedo_color = Color( 1, 1, 1, 0.101961 )
 [node name="orb" groups=["orbs"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Orb" parent="." index="0"]
+material/0 = null
+
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 transform = Transform( 0.456861, 0, 0, 0, 0.456861, 0, 0, 0, 0.456861, 0, 0, 0 )
 mesh = SubResource( 1 )

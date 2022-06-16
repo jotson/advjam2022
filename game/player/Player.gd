@@ -20,7 +20,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	#click_to_move_controller(delta)
+	click_to_move_controller(delta)
 	wasd_controller(delta)
 	
 	if linear_velocity.length() > MAX_SPEED:

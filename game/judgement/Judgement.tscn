@@ -9,7 +9,7 @@
 [ext_resource path="res://game/judgement/scales.glb" type="PackedScene" id=7]
 [ext_resource path="res://game/someone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/judgement/Judgement.gd" type="Script" id=9]
-[ext_resource path="res://game/ground/wall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/ground/arch.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/ground/path.glb" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
@@ -21,7 +21,7 @@ script = ExtResource( 9 )
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.0554206, 0, 0.998463, 0, 1, 0, -0.998463, 0, -0.0554206, -35.2466, 0, 1.29525 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.090938, 0, 8.36165 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 
@@ -54,31 +54,22 @@ collision_mask = 8388608
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="wall" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.979, 0, 0.526759 )
-target_scene = "res://game/limbo/Limbo.tscn"
-title = "Limbo"
-
-[node name="path" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.143458, 0, 0.989656, 0, 1, 0, -0.989656, 0, 0.143458, -23.3335, 0, -0.363473 )
-
-[node name="path10" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.143458, 0, 0.989656, 0, 1, 0, -0.989656, 0, 0.143458, -34.5368, 0, 1.19904 )
-
-[node name="path2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.0646195, 0, 0.99791, 0, 1, 0, -0.99791, 0, -0.0646195, -18.897, 0, 0.279636 )
-
 [node name="path3" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.0646195, 0, 0.99791, 0, 1, 0, -0.99791, 0, -0.0646195, -13.1601, 0, -0.0918547 )
+transform = Transform( -0.998868, 0, -0.0475772, 0, 1, 0, 0.0475772, 0, -0.998868, 1.88622, 0, 7.29836 )
 
 [node name="path4" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.163825, 0, 0.986489, 0, 1, 0, -0.986489, 0, -0.163825, -8.28117, 0, 1.62669 )
+transform = Transform( -0.919444, 0, -0.39322, 0, 1, 0, 0.39322, 0, -0.919444, -0.0699892, 0, 3.1516 )
 
 [node name="path7" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.974413, 0, -0.224764, 0, 1, 0, 0.224764, 0, 0.974413, -4.27202, 0, -2.11153 )
 
 [node name="path9" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.780179, 0, 0.625556, 0, 1, 0, -0.625556, 0, 0.780179, 0.600676, 0, -4.1005 )
+
+[node name="arch" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 16 )
+target_scene = "res://game/limbo/Limbo.tscn"
+title = "Limbo"
 
 [connection signal="body_entered" from="triggerArea" to="." method="_on_triggerArea_body_entered"]
 [connection signal="body_exited" from="triggerArea" to="." method="_on_triggerArea_body_exited"]

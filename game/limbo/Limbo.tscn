@@ -4,7 +4,6 @@
 [ext_resource path="res://game/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/ground/wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/Sun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/limbo/signpost.glb" type="PackedScene" id=7]
 [ext_resource path="res://game/limbo/Limbo.gd" type="Script" id=8]
@@ -13,6 +12,7 @@
 [ext_resource path="res://game/dialog/not-ready.ogg" type="AudioStream" id=11]
 [ext_resource path="res://game/dialog/ready.ogg" type="AudioStream" id=12]
 [ext_resource path="res://game/someone.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/ground/arch.tscn" type="PackedScene" id=14]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 4.47389, 3.37134, 3.8304 )
@@ -104,7 +104,7 @@ transform = Transform( 0.671151, 0, 0.74132, 0, 1, 0, -0.74132, 0, 0.671151, -8.
 transform = Transform( 0.495656, 0, 0.868519, 0, 1, 0, -0.868519, 0, 0.495656, -12.6727, 0, -10.5078 )
 
 [node name="path19" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.495656, 0, 0.868519, 0, 1, 0, -0.868519, 0, 0.495656, -22.0218, 0, -15.8432 )
+transform = Transform( 0.374267, 0, 0.927321, 0, 1, 0, -0.927321, 0, 0.374267, -19.3724, 0, -12.5758 )
 
 [node name="path20" parent="paths" instance=ExtResource( 1 )]
 transform = Transform( 0.495656, 0, 0.868519, 0, 1, 0, -0.868519, 0, 0.495656, -12.3217, 0, -7.68493 )
@@ -142,36 +142,40 @@ transform = Transform( -0.165133, 0, 0.986271, 0, 1, 0, -0.986271, 0, -0.165133,
 [node name="path7" parent="paths" instance=ExtResource( 1 )]
 transform = Transform( -0.0314802, 0, 0.999505, 0, 1, 0, -0.999505, 0, -0.0314802, 26.1148, 0, -0.897552 )
 
-[node name="wall" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5441, 0, 1.92359 )
+[node name="arch" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5971, 0, 0 )
 target_scene = "res://game/meaning/Meaning.tscn"
 title = "Meaning"
 
-[node name="wall2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.641958, 0, -0.76674, 0, 1, 0, 0.76674, 0, 0.641958, 30.966, 0, 37.3683 )
+[node name="arch2" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.615249, 0, -0.788333, 0, 1, 0, 0.788333, 0, 0.615249, 20.9316, 0, 26.8202 )
 target_scene = "res://game/judgement/Judgement.tscn"
 title = "Judgement"
 
-[node name="wall3" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.197726, 0, -0.980257, 0, 1, 0, 0.980257, 0, -0.197726, -13.1655, 0, 42.6951 )
-target_scene = "res://game/joy/Joy.tscn"
-title = "Joy"
+[node name="arch3" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.499153, 0, 0.866514, 0, 1, 0, -0.866514, 0, 0.499153, 18.3521, 0, -31.8586 )
+target_scene = "res://game/loss/Loss.tscn"
+title = "Loss"
 
-[node name="wall4" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.968318, 0, -0.249721, 0, 1, 0, 0.249721, 0, -0.968318, -40.7608, 0, 18.7629 )
-
-[node name="wall5" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.966142, 0, 0.25801, 0, 1, 0, -0.25801, 0, -0.966142, -39.5242, 0, -25.214 )
-
-[node name="wall6" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.264546, 0, 0.964373, 0, 1, 0, -0.964373, 0, -0.264546, -15.4399, 0, -42.4662 )
+[node name="arch4" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.502447, 0, 0.864608, 0, 1, 0, -0.864608, 0, -0.502447, -7.30228, 0, -33.4 )
 target_scene = "res://game/acceptance/Acceptance.tscn"
 title = "Acceptance"
 
-[node name="wall7" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.322926, 0, 0.946424, 0, 1, 0, -0.946424, 0, 0.322926, 25.5316, 0, -40.125 )
-target_scene = "res://game/loss/Loss.tscn"
-title = "Loss"
+[node name="arch5" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.915487, 0, 0.402347, 0, 1, 0, -0.402347, 0, -0.915487, -24.7143, 0, -13.9153 )
+target_scene = "res://game/reincarnation/Reincarnation.tscn"
+title = "Reincarnation"
+
+[node name="arch6" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.923886, 0, -0.382667, 0, 1, 0, 0.382667, 0, -0.923886, -28.8915, 0, 17.2691 )
+target_scene = "res://game/regret/Regret.tscn"
+title = "Regret"
+
+[node name="arch7" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.262476, 0, -0.964939, 0, 1, 0, 0.964939, 0, -0.262476, -10.3185, 0, 34.9279 )
+target_scene = "res://game/joy/Joy.tscn"
+title = "Joy"
 
 [node name="GhostSpawner" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.34244, 0, 9.91556 )
