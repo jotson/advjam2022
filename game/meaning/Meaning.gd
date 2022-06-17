@@ -27,8 +27,12 @@ func _on_triggerArea_body_entered(_body):
 
 
 func _on_book_pedastal_clicked():
+	if Game.State.meaning.ready:
+		return
+		
 	$ClickBeacon.hide()
 	$AnimationPlayer.play("meaning2")
+	Game.Player.stop()
 
 
 func _on_triggerArea_body_exited(_body):

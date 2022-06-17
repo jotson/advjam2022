@@ -9,6 +9,7 @@ const Waypoint = preload("res://game/waypoint/Waypoint.tscn")
 var target_position: Vector3 = Vector3.ZERO
 var linear_velocity: Vector3 = Vector3.ZERO
 var moving = false
+var dontmove = 0.0
 
 
 func _ready():
@@ -57,6 +58,10 @@ func wasd_controller(delta: float):
 
 
 func click_to_move_controller(delta: float):
+	dontmove -= delta
+	if dontmove >= 0:
+		return
+		
 	if Game.player_control:
 		if Input.is_mouse_button_pressed(1):
 			var mouse_position = get_viewport().get_mouse_position()
@@ -102,3 +107,9 @@ func shrink():
 func grow():
 	var t = create_tween()
 	t.tween_property($spirit, "scale", Vector3(1,1,1), 1.0)
+
+
+func stop():
+	moving = false
+	target_position = Vector3.ZERO
+	dontmove = 0.3

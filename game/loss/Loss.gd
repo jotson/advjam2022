@@ -29,6 +29,7 @@ func _on_candles_clicked():
 	$AnimationPlayer.play("loss2")
 	Game.State.loss.candles += 1
 	make_candle()
+	Game.Player.stop()
 	if Game.State.loss.ready == false:
 		achievement_get()
 

@@ -46,7 +46,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32063, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16625, 0 )
 pixel_size = 0.003
 billboard = 1
 frames = SubResource( 7 )
