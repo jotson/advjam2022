@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://game/ground/path.glb" type="PackedScene" id=1]
 [ext_resource path="res://game/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/ClickBeacon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/Sun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/limbo/signpost.glb" type="PackedScene" id=7]
 [ext_resource path="res://game/limbo/Limbo.gd" type="Script" id=8]
@@ -34,53 +35,17 @@ transform = Transform( 0.880756, -0.366651, 0.299727, -0.0557725, 0.548196, 0.83
 
 [node name="paths" type="Spatial" parent="."]
 
-[node name="path" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.888393, 0, -0.459084, 0, 1, 0, 0.459084, 0, 0.888393, -1.12267, 0, 4.18757 )
-
-[node name="path2" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.666051, 0, -0.745906, 0, 1, 0, 0.745906, 0, 0.666051, -3.69243, 0, 8.25381 )
-
-[node name="path24" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.666051, 0, -0.745906, 0, 1, 0, 0.745906, 0, 0.666051, -6.86726, 0, 8.33972 )
-
-[node name="path25" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.33277, 0, -0.943008, 0, 1, 0, 0.943008, 0, 0.33277, -11.4062, 0, 12.3927 )
-
-[node name="path26" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.275554, 0, -0.961285, 0, 1, 0, 0.961285, 0, 0.275554, -15.5686, 0, 13.8259 )
-
-[node name="path27" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.465182, 0, -0.885215, 0, 1, 0, 0.885215, 0, 0.465182, -20.2497, 0, 15.1677 )
-
-[node name="path28" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.15459, 0, -0.987978, 0, 1, 0, 0.987978, 0, 0.15459, -24.4139, 0, 16.5236 )
-
-[node name="path3" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.848861, 0, -0.528616, 0, 1, 0, 0.528616, 0, 0.848861, -7.37868, 0, 12.0204 )
-
-[node name="path22" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.976631, 0, -0.214923, 0, 1, 0, 0.214923, 0, 0.976631, -10.1632, 0, 17.9066 )
-
-[node name="path23" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.99456, 0, -0.104164, 0, 1, 0, 0.104164, 0, 0.99456, -10.5742, 0, 23.9433 )
-
-[node name="path29" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.99456, 0, -0.104164, 0, 1, 0, 0.104164, 0, 0.99456, -9.19387, 0, 25.8764 )
-
-[node name="path30" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.99456, 0, -0.104164, 0, 1, 0, 0.104164, 0, 0.99456, -9.77974, 0, 31.4703 )
-
 [node name="path8" parent="paths" instance=ExtResource( 1 )]
 transform = Transform( 0.939058, 0, -0.343758, 0, 1, 0, 0.343758, 0, 0.939058, 6.2691, 0, -16.8358 )
 
 [node name="path13" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.829935, 0, 0.557861, 0, 1, 0, -0.557861, 0, 0.829935, 4.19777, 0, -21.7436 )
+transform = Transform( 0.65869, 0, 0.752415, 0, 1, 0, -0.752415, 0, 0.65869, 0.686462, 0, -17.7393 )
 
 [node name="path14" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.589789, 0, 0.807558, 0, 1, 0, -0.807558, 0, 0.589789, 0.298435, 0, -25.7007 )
+transform = Transform( 0.362438, 0, 0.932008, 0, 1, 0, -0.932008, 0, 0.362438, -4.09887, 0, -20.5614 )
 
 [node name="path15" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.68182, 0, 0.73152, 0, 1, 0, -0.73152, 0, 0.68182, -4.35651, 0, -29.8442 )
+transform = Transform( 0.47092, 0, 0.882176, 0, 1, 0, -0.882176, 0, 0.47092, -9.66234, 0, -23.3694 )
 
 [node name="path11" parent="paths" instance=ExtResource( 1 )]
 transform = Transform( 0.794383, 0, -0.607418, 0, 1, 0, 0.607418, 0, 0.794383, 9.65662, 0, -21.7304 )
@@ -95,93 +60,77 @@ transform = Transform( 0.876147, 0, -0.482044, 0, 1, 0, 0.482044, 0, 0.876147, 2
 transform = Transform( 0.976319, 0, -0.216337, 0, 1, 0, 0.216337, 0, 0.976319, 0.202814, 0, -5.66539 )
 
 [node name="path16" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.572046, 0, 0.820222, 0, 1, 0, -0.820222, 0, 0.572046, -3.95113, 0, -3.58964 )
+transform = Transform( 0.00816819, 0, 0.999967, 0, 1, 0, -0.999967, 0, 0.00816819, -4.11944, 0, -1.88574 )
 
 [node name="path17" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.671151, 0, 0.74132, 0, 1, 0, -0.74132, 0, 0.671151, -8.65441, 0, -6.86984 )
+transform = Transform( 0.134522, 0, 0.99091, 0, 1, 0, -0.99091, 0, 0.134522, -9.8534, 0, -1.93258 )
 
 [node name="path18" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.495656, 0, 0.868519, 0, 1, 0, -0.868519, 0, 0.495656, -12.6727, 0, -10.5078 )
+transform = Transform( -0.0821469, 0, 0.99662, 0, 1, 0, -0.99662, 0, -0.0821469, -15.2246, 0, -2.66176 )
 
 [node name="path19" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.374267, 0, 0.927321, 0, 1, 0, -0.927321, 0, 0.374267, -19.3724, 0, -12.5758 )
+transform = Transform( -0.215519, 0, 0.9765, 0, 1, 0, -0.9765, 0, -0.215519, -21.9201, 0, -0.580066 )
 
 [node name="path20" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.495656, 0, 0.868519, 0, 1, 0, -0.868519, 0, 0.495656, -12.3217, 0, -7.68493 )
+transform = Transform( -0.0821469, 0, 0.99662, 0, 1, 0, -0.99662, 0, -0.0821469, -13.3392, 0, -0.531701 )
 
 [node name="path4" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 1.77185e-05, 0, 1, 0, 1, 0, -1, 0, 1.77185e-05, 10.5301, 0, -0.305189 )
+transform = Transform( 0.346232, 0, 0.938149, 0, 1, 0, -0.938149, 0, 0.346232, 4.72385, 0, -1.95532 )
 
 [node name="path21" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.148655, 0, -0.988889, 0, 1, 0, 0.988889, 0, -0.148655, 12.4892, 0, 2.46688 )
+transform = Transform( -0.48183, 0, -0.876265, 0, 1, 0, 0.876265, 0, -0.48183, 5.60205, 0, 1.32358 )
 
 [node name="path31" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.620505, 0, -0.784203, 0, 1, 0, 0.784203, 0, -0.620505, 6.39467, 0, 7.14342 )
+transform = Transform( -0.94017, 0, -0.340708, 0, 1, 0, 0.340708, 0, -0.94017, 0.966088, 0, 5.3543 )
 
 [node name="path32" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.744592, 0, -0.667521, 0, 1, 0, 0.667521, 0, -0.744592, 9.5463, 0, 10.5493 )
+transform = Transform( -0.984354, 0, -0.176208, 0, 1, 0, 0.176208, 0, -0.984354, 1.85569, 0, 9.90858 )
 
 [node name="path33" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.816138, 0, -0.577857, 0, 1, 0, 0.577857, 0, -0.816138, 12.6855, 0, 14.9097 )
-
-[node name="path34" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.816138, 0, -0.577857, 0, 1, 0, 0.577857, 0, -0.816138, 18.6913, 0, 20.8629 )
+transform = Transform( -0.998056, 0, -0.0623195, 0, 1, 0, 0.0623195, 0, -0.998056, 2.23277, 0, 15.2682 )
 
 [node name="path35" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.816138, 0, -0.577857, 0, 1, 0, 0.577857, 0, -0.816138, 15.9254, 0, 19.6228 )
-
-[node name="path36" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.922538, 0, -0.385906, 0, 1, 0, 0.385906, 0, -0.922538, 21.3286, 0, 27.254 )
+transform = Transform( -0.998056, 0, -0.0623195, 0, 1, 0, 0.0623195, 0, -0.998056, 0.755872, 0, 19.0193 )
 
 [node name="path5" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( 0.268197, 0, 0.963364, 0, 1, 0, -0.963364, 0, 0.268197, 15.1611, 0, 0.379276 )
+transform = Transform( 0.585142, 0, 0.810931, 0, 1, 0, -0.810931, 0, 0.585142, 8.83147, 0, 0.290136 )
 
 [node name="path6" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.165133, 0, 0.986271, 0, 1, 0, -0.986271, 0, -0.165133, 20.8812, 0, 0.407942 )
+transform = Transform( 0.186542, 0, 0.982447, 0, 1, 0, -0.982447, 0, 0.186542, 14.1879, 0, 2.29742 )
 
 [node name="path7" parent="paths" instance=ExtResource( 1 )]
-transform = Transform( -0.0314802, 0, 0.999505, 0, 1, 0, -0.999505, 0, -0.0314802, 26.1148, 0, -0.897552 )
+transform = Transform( 0.316511, 0, 0.94859, 0, 1, 0, -0.94859, 0, 0.316511, 19.5498, 0, 2.88461 )
 
 [node name="arch" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5971, 0, 0 )
+transform = Transform( 0.938155, 0, -0.346215, 0, 1, 0, 0.346215, 0, 0.938155, 25.6429, 0, 6.08993 )
 target_scene = "res://game/meaning/Meaning.tscn"
 title = "Meaning"
 
 [node name="arch2" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.615249, 0, -0.788333, 0, 1, 0, 0.788333, 0, 0.615249, 20.9316, 0, 26.8202 )
+transform = Transform( 0.108746, 0, -0.99407, 0, 1, 0, 0.99407, 0, 0.108746, 1.59616, 0, 22.9362 )
 target_scene = "res://game/judgement/Judgement.tscn"
 title = "Judgement"
 
 [node name="arch3" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.499153, 0, 0.866514, 0, 1, 0, -0.866514, 0, 0.499153, 18.3521, 0, -31.8586 )
+transform = Transform( 0.499153, 0, 0.866514, 0, 1, 0, -0.866514, 0, 0.499153, 16.0198, 0, -27.8098 )
 target_scene = "res://game/loss/Loss.tscn"
 title = "Loss"
 
 [node name="arch4" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.502447, 0, 0.864608, 0, 1, 0, -0.864608, 0, -0.502447, -7.30228, 0, -33.4 )
+transform = Transform( -0.707773, 0, 0.70644, 0, 1, 0, -0.70644, 0, -0.707773, -13.423, 0, -26.0487 )
 target_scene = "res://game/acceptance/Acceptance.tscn"
 title = "Acceptance"
 
 [node name="arch5" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.915487, 0, 0.402347, 0, 1, 0, -0.402347, 0, -0.915487, -24.7143, 0, -13.9153 )
+transform = Transform( -0.982612, 0, -0.185667, 0, 1, 0, 0.185667, 0, -0.982612, -25.3263, 0, 1.00288 )
 target_scene = "res://game/reincarnation/Reincarnation.tscn"
 title = "Reincarnation"
-
-[node name="arch6" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.923886, 0, -0.382667, 0, 1, 0, 0.382667, 0, -0.923886, -28.8915, 0, 17.2691 )
-target_scene = "res://game/regret/Regret.tscn"
-title = "Regret"
-
-[node name="arch7" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.262476, 0, -0.964939, 0, 1, 0, 0.964939, 0, -0.262476, -10.3185, 0, 34.9279 )
-target_scene = "res://game/joy/Joy.tscn"
-title = "Joy"
 
 [node name="GhostSpawner" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.34244, 0, 9.91556 )
 
 [node name="door" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 9.3494, 0, -11.0147 )
+transform = Transform( 0.65702, 0, -0.753873, 0, 1, 0, 0.753873, 0, 0.65702, 14.0939, 0, -12.5932 )
 
 [node name="doorArea" type="Area" parent="door"]
 collision_mask = 8388608
@@ -191,19 +140,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, 2.50506, 2.14496 
 shape = SubResource( 1 )
 
 [node name="dialogNotready" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 9.3494, 0, -11.0147 )
+transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 13.2482, 3.3507, -6.29183 )
 stream = ExtResource( 11 )
 unit_size = 50.0
 bus = "Sfx"
 
 [node name="dialogReady" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 9.3494, 0, -11.0147 )
+transform = Transform( 0.881625, 0, -0.471951, 0, 1, 0, 0.471951, 0, 0.881625, 13.2482, 3.3507, -6.29183 )
 stream = ExtResource( 12 )
 unit_size = 50.0
 bus = "Sfx"
 
 [node name="someone" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.161483, 0, -0.986875, 0, 1, 0, 0.986875, 0, 0.161483, 14.7816, 0, -7.66927 )
+transform = Transform( 0.266481, 0, -0.96384, 0, 1, 0, 0.96384, 0, 0.266481, 18.3622, 0, -6.61015 )
+
+[node name="ClickBeacon" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.647349, 0, -0.762194, 0, 1, 0, 0.762194, 0, 0.647349, 13.8355, 6.49674, -12.1518 )
 
 [connection signal="body_entered" from="door/doorArea" to="." method="_on_doorArea_body_entered"]
 [connection signal="body_exited" from="door/doorArea" to="." method="_on_doorArea_body_exited"]

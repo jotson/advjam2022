@@ -46,6 +46,7 @@ var State = {
 
 func _ready():
 	$Transition.hide()
+	$worldBGM.play()
 
 
 func scene_transition(scene_path: String, title: String = "", duration: float = 3.0):

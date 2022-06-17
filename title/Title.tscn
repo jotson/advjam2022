@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://gui/fonts/regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://title/Title.gd" type="Script" id=3]
-
-[sub_resource type="CapsuleMesh" id=1]
+[ext_resource path="res://game/someone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/ground/Floor.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
@@ -20,32 +20,39 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.164706, 0.533333, 0.886275, 0.560784 )
+
 [node name="background" type="Spatial" parent="."]
 
-[node name="Camera" type="Camera" parent="background"]
-transform = Transform( 0.947042, 0, 0.321109, -0.0604285, 0.982133, 0.178221, -0.315372, -0.188187, 0.930122, 1.07782, 0.790913, 1.85263 )
+[node name="Floor" parent="background" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.71774, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="background"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.56397 )
-mesh = SubResource( 1 )
+[node name="Camera" type="Camera" parent="background"]
+transform = Transform( 0.989278, -0.102634, 0.103903, 0, 0.71144, 0.702747, -0.146046, -0.695212, 0.703811, 0.909514, 4.57472, 2.0699 )
+
+[node name="someone" parent="background" instance=ExtResource( 4 )]
+transform = Transform( 0.845905, 0, -0.533334, 0, 1, 0, 0.533334, 0, 0.845905, 4.07156, -3.77984, -3.76797 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="background"]
 transform = Transform( 0.924173, 0.107585, 0.36651, -0.381974, 0.260298, 0.886759, 0, -0.959516, 0.281655, 0, 1.61756, 0 )
 shadow_enabled = true
 
 [node name="Title" type="Label" parent="."]
-margin_left = 40.0
-margin_top = 40.0
-margin_right = 418.0
-margin_bottom = 120.0
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 402.0
+margin_bottom = 112.0
 custom_fonts/font = SubResource( 2 )
 text = "How did you die?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 40.0
-margin_top = 200.0
-margin_right = 474.0
-margin_bottom = 447.0
+margin_left = 24.0
+margin_top = 144.0
+margin_right = 458.0
+margin_bottom = 391.0
 
 [node name="Credits" type="Label" parent="VBoxContainer"]
 margin_right = 434.0

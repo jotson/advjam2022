@@ -5,6 +5,14 @@ func _ready():
 	Game.CurrentCamera = $Camera
 	Game.State.limbo.visits += 1
 	Game.player_control = true
+	$ClickBeacon.show()
+	var completed = true
+	for area in Game.State:
+		if Game.State[area].has("ready") and not Game.State[area]["ready"]:
+			$ClickBeacon.hide()
+			completed = false
+			break
+	Game.State.limbo.completed = completed
 
 
 func _on_doorArea_body_entered(_body):

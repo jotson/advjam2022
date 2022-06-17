@@ -32,7 +32,7 @@ func _on_book_pedastal_clicked():
 		
 	$ClickBeacon.hide()
 	$AnimationPlayer.play("meaning2")
-	Game.Player.stop()
+	#Game.Player.stop()
 
 
 func _on_triggerArea_body_exited(_body):

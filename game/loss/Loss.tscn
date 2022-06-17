@@ -128,7 +128,7 @@ target_scene = "res://game/limbo/Limbo.tscn"
 title = "Limbo"
 
 [node name="ClickBeacon" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, -7.49451, 1.30829, -15.8649 )
+transform = Transform( 0.87484, 0, -0.484413, 0, 1, 0, 0.484413, 0, 0.87484, -7.49451, 1.9517, -15.8649 )
 
 [node name="candles" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.892342, 0, 0.45136, 0, 1, 0, -0.45136, 0, -0.892342, -7.4209, 0, -15.8293 )
