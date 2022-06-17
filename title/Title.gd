@@ -1,6 +1,11 @@
 extends Control
 
 
+func _ready():
+	if OS.has_feature("HTML5"):
+		$VBoxContainer/QuitButton.hide()
+		$VBoxContainer/GameLink.hide()
+
 func _on_PlayButton_pressed():
 	Game.scene_transition("res://game/checkin/Checkin.tscn", "Listen")
 
