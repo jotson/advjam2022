@@ -8,6 +8,8 @@ Design, art, sound, programming, music by me!
 
 Charis SIL font is licensed under OFL
 
+[Play it on Itch.io](https://jotson.itch.io/how-did-you-die)
+
 Instructions:
 
 - Listen to collect orbs
